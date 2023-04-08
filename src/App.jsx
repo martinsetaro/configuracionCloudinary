@@ -3,17 +3,19 @@ import {Cloudinary} from "@cloudinary/url-gen";
 import {AdvancedImage} from '@cloudinary/react';
 import {fill} from "@cloudinary/url-gen/actions/resize";
 
+
 const App = () => {
 
  
-
-  // const cld = new Cloudinary({
-  //   cloud: {
-  //     cloudName: 'dkqdts2ye'
-  //   }
-  // });
-  // const myImage = cld.image('autoCloud.webp'); 
-  // myImage.resize(fill().width(250).height(250));
+  // lo puedo usar para hacer una vista previa
+  
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: 'dkqdts2ye'
+    }
+  });
+  const myImage = cld.image('autoCloud.webp'); 
+  myImage.resize(fill().width(250).height(250));
 
 
   const [image, setImage] = useState(null);
@@ -45,9 +47,9 @@ const App = () => {
   return (
     <div className="App-body">
       <h1>React Quick Start</h1>
-      {/* <div>
+      <div>
         <AdvancedImage cldImg={myImage} />
-      </div> */}
+      </div>
       <div>
       <input type="file" onChange={handleImageChange} />
       <button onClick={handleImageUpload}>Subir imagen</button>
